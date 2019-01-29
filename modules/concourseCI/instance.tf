@@ -31,6 +31,15 @@ resource "aws_instance" "ci_instance" {
   tags {
     Name = "CI"
   }
+
+  provisioner "file" {
+    source      = "${path.module}/scripts/docker-compose.yml"
+    destination = "docker-compose.yml"
+    connection {
+      user = "ec2-user"
+      private_key = "${file("${path.root}/ci_key")}"
+    }
+  }
 }
 
 resource "aws_key_pair" "ci_instance_key" {
