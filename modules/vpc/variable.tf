@@ -1,5 +1,5 @@
 variable "primary_cidr" {
-  default = "172.20.0.0/16"
+  default     = "172.20.0.0/16"
   description = "Cidr for main vpc"
 }
 
@@ -10,3 +10,4 @@ variable "public_subnet_cidr" {
 variable "private_subnet_cidr" {
   default = "172.20.20.0/24"
 }
+
