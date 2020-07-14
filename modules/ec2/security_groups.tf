@@ -1,8 +1,8 @@
-resource "aws_security_group" "ci_group" {
-  name   = "CI group"
+resource "aws_security_group" "security_group" {
+  name   = "${var.instance_name} group"
   vpc_id = var.vpc_id
   tags = {
-    Name = "CI sg"
+    Name = "${var.instance_name} sg"
   }
 
   ingress {

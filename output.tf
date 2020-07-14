@@ -1,3 +1,3 @@
 output "ip_address" {
-  value = "${module.ci.instance_ip}"
+  value = "${module.ec2.instance_ip}"
 }
